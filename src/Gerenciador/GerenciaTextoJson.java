@@ -10,7 +10,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GerenciaTextoJson implements GerenciaTexto{
+public class GerenciaTextoJson implements GerenciaTexto {
 
     @Override
     public void exportar(List<ProdutoTexto> textos) {
@@ -21,7 +21,7 @@ public class GerenciaTextoJson implements GerenciaTexto{
             FileWriter fileWriter = new FileWriter("produtoTextos.json");
             fileWriter.write(json);
             fileWriter.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -35,15 +35,15 @@ public class GerenciaTextoJson implements GerenciaTexto{
         Gson gson = new Gson();
         List<ProdutoTexto> textos = new ArrayList<ProdutoTexto>();
 
-        try(JsonReader reader = new JsonReader(new FileReader("produtoTextos.json"))){
+        try (JsonReader reader = new JsonReader(new FileReader("produtoTextos.json"))) {
 
             reader.beginArray();
-            while (reader.hasNext()){
+            while (reader.hasNext()) {
                 textos.add(gson.fromJson(reader, ProdutoTexto.class));
             }
             reader.endArray();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return textos;

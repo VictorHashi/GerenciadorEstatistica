@@ -6,13 +6,12 @@ import DB.TextoDAO;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class GerenciaTextoSQL implements GerenciaTexto{
+public class GerenciaTextoSQL implements GerenciaTexto {
 
     @Override
     public void exportar(List<ProdutoTexto> textos) {
         TextoDAO textoDAO = new TextoDAO();
-        for (ProdutoTexto texto: textos){
+        for (ProdutoTexto texto : textos) {
             textoDAO.insert(texto);
         }
     }

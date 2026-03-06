@@ -10,7 +10,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 import com.thoughtworks.xstream.security.TypePermission;
 
-public class GerenciaTextoXML implements GerenciaTexto{
+public class GerenciaTextoXML implements GerenciaTexto {
 
     @Override
     public void exportar(List<ProdutoTexto> texto) {
@@ -26,7 +26,7 @@ public class GerenciaTextoXML implements GerenciaTexto{
 
             System.out.println("XML exportado");
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -43,7 +43,7 @@ public class GerenciaTextoXML implements GerenciaTexto{
             FileReader fileReader = new FileReader("produtoTextos.xml");
             List<ProdutoTexto> textos = (List<ProdutoTexto>) xStream.fromXML(fileReader);
             return textos;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
